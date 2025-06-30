@@ -595,7 +595,7 @@
 
         .stage-details {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 15px;
         }
 
@@ -868,6 +868,14 @@
 
                 <div class="input-group">
                     <label>
+                        회사 총 가치
+                        <span class="help-icon" data-tooltip="현재 주당 가치 × 총 발행 주식 수로 자동 계산됩니다">?</span>
+                    </label>
+                    <input type="text" id="companyValuation" value="" placeholder="자동 계산됨" readonly style="background-color: #f8f9fa; color: #6c757d;">
+                </div>
+
+                <div class="input-group">
+                    <label>
                         현재 회사 단계
                         <span class="help-icon" data-tooltip="현재 회사의 투자 단계">?</span>
                     </label>
@@ -1091,6 +1099,10 @@
                 const currentStage = document.getElementById('companyStage').value;
                 const dilutionRate = parseFloat(document.getElementById('dilutionRate').value) / 100;
 
+                // 회사 총 밸류에이션 계산 및 표시
+                const companyValuation = currentSharePrice * totalShares;
+                document.getElementById('companyValuation').value = formatCurrency(companyValuation);
+
                 // 라운드별 배수 가져오기
                 const multipliers = {
                     seedToA: parseFloat(document.getElementById('seedToA').value),
@@ -1260,16 +1272,20 @@
                         </div>
                         <div class="stage-details">
                             <div class="stage-detail">
+                                <div class="stage-detail-label">회사 총 가치</div>
+                                <div class="stage-detail-value">${formatCurrency(sharePrice * totalShares)}</div>
+                            </div>
+                            <div class="stage-detail">
                                 <div class="stage-detail-label">주당 가격</div>
                                 <div class="stage-detail-value">${formatCurrency(sharePrice)}</div>
                             </div>
                             <div class="stage-detail">
-                                <div class="stage-detail-label">내 지분율</div>
-                                <div class="stage-detail-value">${ownershipAtStage.toFixed(4)}%</div>
-                            </div>
-                            <div class="stage-detail">
                                 <div class="stage-detail-label">총 주식 가치</div>
                                 <div class="stage-detail-value">${formatCurrency(totalStockValue)}</div>
+                            </div>
+                            <div class="stage-detail">
+                                <div class="stage-detail-label">내 지분율</div>
+                                <div class="stage-detail-value">${ownershipAtStage.toFixed(4)}%</div>
                             </div>
                             <div class="stage-detail">
                                 <div class="stage-detail-label">옵션 행사 비용</div>
