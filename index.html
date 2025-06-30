@@ -143,48 +143,6 @@
             position: relative;
         }
 
-        .visitor-counter {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 15px 20px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            text-align: left;
-        }
-
-        .visitor-counter h4 {
-            margin: 0 0 8px 0;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.9);
-            font-weight: 600;
-        }
-
-        .visitor-stats {
-            display: flex;
-            gap: 20px;
-        }
-
-        .visitor-stat {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .visitor-label {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 3px;
-        }
-
-        .visitor-count {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: white;
-        }
-
         .header h1 {
             font-size: 2.8rem;
             margin-bottom: 15px;
@@ -834,12 +792,6 @@
                 padding: 20px;
             }
 
-            .visitor-counter {
-                position: static;
-                margin: 0 auto 20px auto;
-                max-width: 200px;
-            }
-
             .header h1 {
                 font-size: 2.2rem;
             }
@@ -874,19 +826,6 @@
         </div>
 
         <div class="header">
-            <div class="visitor-counter">
-                <h4>👥 방문자 수</h4>
-                <div class="visitor-stats">
-                    <div class="visitor-stat">
-                        <div class="visitor-label">Today</div>
-                        <div class="visitor-count" id="todayCount">0</div>
-                    </div>
-                    <div class="visitor-stat">
-                        <div class="visitor-label">Total</div>
-                        <div class="visitor-count" id="totalCount">0</div>
-                    </div>
-                </div>
-            </div>
             <h1>🚀 스타트업 스톡옵션 계산기</h1>
             <p>받은 오퍼의 스톡옵션이 각 투자 라운드별로 얼마나 가치있는지 계산해보세요!</p>
         </div>
@@ -1079,34 +1018,6 @@
     </div>
 
     <script>
-        // 방문자 카운팅 시스템
-        function initVisitorCounter() {
-            const today = new Date().toDateString();
-            
-            // 오늘 날짜 확인
-            const lastVisitDate = localStorage.getItem('lastVisitDate') || '';
-            let todayCount = parseInt(localStorage.getItem('todayCount') || '0');
-            let totalCount = parseInt(localStorage.getItem('totalCount') || '0');
-            
-            // 새로운 날이면 오늘 카운트 리셋
-            if (lastVisitDate !== today) {
-                todayCount = 0;
-                localStorage.setItem('lastVisitDate', today);
-            }
-            
-            // 방문 카운트 증가
-            todayCount++;
-            totalCount++;
-            
-            // 저장
-            localStorage.setItem('todayCount', todayCount.toString());
-            localStorage.setItem('totalCount', totalCount.toString());
-            
-            // 화면에 표시
-            document.getElementById('todayCount').textContent = formatNumber(todayCount);
-            document.getElementById('totalCount').textContent = formatNumber(totalCount);
-        }
-
         function formatNumber(num) {
             return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
         }
@@ -1370,9 +1281,6 @@
 
         // 페이지 로드 시 초기화
         window.onload = function() {
-            // 방문자 카운터 초기화
-            initVisitorCounter();
-            
             // 콤마 자동 추가 이벤트 리스너
             addCommasOnInput('optionShares');
             addCommasOnInput('strikePrice');
