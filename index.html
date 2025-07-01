@@ -3,15 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스타트업 스톡옵션 계산기</title>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-W4QD799XXG"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-W4QD799XXG');
-</script>
+    
+    <!-- SEO 메타 태그 -->
+    <title>스톡옵션 계산기 | 스타트업 주식매수선택권 가치 계산 도구 - Candid</title>
+    <meta name="description" content="스타트업 스톡옵션의 실제 가치를 정확히 계산해보세요. 투자 라운드별 주식 가치 변화, 희석화 효과, 세후 수익을 시뮬레이션하는 무료 스톡옵션 계산기입니다.">
+    <meta name="keywords" content="스톡옵션, 스톡옵션 계산기, 주식매수선택권, 스타트업 주식, 옵션 가치 계산, 주식 시뮬레이션, 스타트업 투자, 희석화 계산">
+    <meta name="author" content="Candid">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph 메타 태그 (소셜 미디어 공유용) -->
+    <meta property="og:title" content="스톡옵션 계산기 | 스타트업 주식매수선택권 가치 계산">
+    <meta property="og:description" content="스타트업 스톡옵션의 실제 가치를 정확히 계산해보세요. 투자 라운드별 주식 가치 변화와 세후 수익을 시뮬레이션하는 무료 도구입니다.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stockoption-calculator.com">
+    <meta property="og:image" content="https://stockoption-calculator.com/og-image.jpg">
+    <meta property="og:site_name" content="Candid 스톡옵션 계산기">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- Twitter Card 메타 태그 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="스톡옵션 계산기 | 스타트업 주식매수선택권 가치 계산">
+    <meta name="twitter:description" content="스타트업 스톡옵션의 실제 가치를 정확히 계산해보세요. 무료 계산 도구로 투자 라운드별 가치 변화를 시뮬레이션하세요.">
+    <meta name="twitter:image" content="https://stockoption-calculator.com/twitter-image.jpg">
+    
+    <!-- 정규 URL (중복 콘텐츠 방지) -->
+    <link rel="canonical" href="https://stockoption-calculator.com">
+    
+    <!-- 구조화된 데이터 (Schema.org) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "스톡옵션 계산기",
+      "alternateName": "주식매수선택권 계산기",
+      "description": "스타트업 스톡옵션의 실제 가치를 계산하고 투자 라운드별 주식 가치 변화를 시뮬레이션하는 무료 웹 도구",
+      "url": "https://stockoption-calculator.com",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "KRW"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Candid",
+        "url": "https://teamcandid.kr"
+      },
+      "featureList": [
+        "스톡옵션 가치 계산",
+        "투자 라운드별 시뮬레이션",
+        "희석화 효과 분석",
+        "세후 수익 계산",
+        "주식 시장 가치 예측"
+      ],
+      "screenshot": "https://stockoption-calculator.com/screenshot.jpg"
+    }
+    </script>
     
     <style>
         * {
@@ -835,20 +883,21 @@
         </div>
 
         <div class="header">
-            <h1>🚀 스타트업 스톡옵션 계산기</h1>
-            <p>받은 오퍼의 스톡옵션이 각 투자 라운드별로 얼마나 가치있는지 계산해보세요!</p>
+            <h1>🚀 스톡옵션 계산기</h1>
+            <h2 style="font-size: 1.1rem; font-weight: 400; margin-top: 10px; opacity: 0.9;">스타트업 스톡옵션 시뮬레이터</h2>
+            <p style="margin-top: 15px;">받은 오퍼의 스톡옵션이 각 투자 라운드별로 얼마나 가치있는지 정확히 계산해보세요!</p>
         </div>
 
         <div class="content">
             <div class="sidebar">
-                <h2>📋 설정</h2>
+                <h2>📋 스톡옵션 설정</h2>
                 
                 <div class="input-group">
                     <label>
                         받게 될 옵션 주식 수
                         <span class="help-icon" data-tooltip="회사에서 제공하는 스톡옵션 개수">?</span>
                     </label>
-                    <input type="text" id="optionShares" value="1,000" placeholder="예: 1,000">
+                    <input type="text" id="optionShares" value="1,000" placeholder="예: 1,000" aria-label="스톡옵션 주식 수 입력">
                 </div>
 
                 <div class="input-group">
@@ -856,7 +905,7 @@
                         행사가격 (원)
                         <span class="help-icon" data-tooltip="1주당 몇 원에 살 수 있는지">?</span>
                     </label>
-                    <input type="text" id="strikePrice" value="1,000" placeholder="예: 1,000">
+                    <input type="text" id="strikePrice" value="1,000" placeholder="예: 1,000" aria-label="스톡옵션 행사가격 입력">
                 </div>
 
                 <div class="input-group">
@@ -864,7 +913,7 @@
                         현재 주당 가치 (원)
                         <span class="help-icon" data-tooltip="최근 투자 라운드 기준 또는 회사 내부 평가 주당 가격">?</span>
                     </label>
-                    <input type="text" id="currentSharePrice" value="5,000" placeholder="예: 5,000">
+                    <input type="text" id="currentSharePrice" value="5,000" placeholder="예: 5,000" aria-label="현재 주당 가치 입력">
                 </div>
 
                 <div class="input-group">
@@ -872,7 +921,7 @@
                         총 발행 주식 수
                         <span class="help-icon" data-tooltip="회사 전체 주식 개수">?</span>
                     </label>
-                    <input type="text" id="totalShares" value="1,000,000" placeholder="예: 1,000,000">
+                    <input type="text" id="totalShares" value="1,000,000" placeholder="예: 1,000,000" aria-label="총 발행 주식 수 입력">
                 </div>
 
                 <div class="input-group">
@@ -880,7 +929,7 @@
                         회사 총 가치
                         <span class="help-icon" data-tooltip="현재 주당 가치 × 총 발행 주식 수로 자동 계산됩니다">?</span>
                     </label>
-                    <input type="text" id="companyValuation" value="" placeholder="자동 계산됨" readonly style="background-color: #f8f9fa; color: #6c757d;">
+                    <input type="text" id="companyValuation" value="" placeholder="자동 계산됨" readonly style="background-color: #f8f9fa; color: #6c757d;" aria-label="회사 총 가치 (자동 계산)">
                 </div>
 
                 <div class="input-group">
@@ -888,7 +937,7 @@
                         현재 회사 단계
                         <span class="help-icon" data-tooltip="현재 회사의 투자 단계">?</span>
                     </label>
-                    <select id="companyStage">
+                    <select id="companyStage" aria-label="현재 회사 투자 단계 선택">
                         <option value="seed">시드</option>
                         <option value="seriesA">시리즈 A</option>
                         <option value="seriesB">시리즈 B</option>
@@ -903,27 +952,27 @@
                     <div class="multiplier-grid">
                         <div class="multiplier-input">
                             <label>시드→A</label>
-                            <input type="number" id="seedToA" value="3" step="0.5" min="1">
+                            <input type="number" id="seedToA" value="3" step="0.5" min="1" aria-label="시드에서 시리즈A 가치 상승 배수">
                         </div>
                         <div class="multiplier-input">
                             <label>A→B</label>
-                            <input type="number" id="aToB" value="3" step="0.5" min="1">
+                            <input type="number" id="aToB" value="3" step="0.5" min="1" aria-label="시리즈A에서 시리즈B 가치 상승 배수">
                         </div>
                         <div class="multiplier-input">
                             <label>B→C</label>
-                            <input type="number" id="bToC" value="2.5" step="0.5" min="1">
+                            <input type="number" id="bToC" value="2.5" step="0.5" min="1" aria-label="시리즈B에서 시리즈C 가치 상승 배수">
                         </div>
                         <div class="multiplier-input">
                             <label>C→D</label>
-                            <input type="number" id="cToD" value="2" step="0.5" min="1">
+                            <input type="number" id="cToD" value="2" step="0.5" min="1" aria-label="시리즈C에서 시리즈D 가치 상승 배수">
                         </div>
                         <div class="multiplier-input">
                             <label>D→E</label>
-                            <input type="number" id="dToE" value="2" step="0.5" min="1">
+                            <input type="number" id="dToE" value="2" step="0.5" min="1" aria-label="시리즈D에서 시리즈E 가치 상승 배수">
                         </div>
                         <div class="multiplier-input">
                             <label>Exit 배수</label>
-                            <input type="number" id="exitMultiple" value="5" step="0.5" min="1">
+                            <input type="number" id="exitMultiple" value="5" step="0.5" min="1" aria-label="Exit 시 가치 상승 배수">
                         </div>
                     </div>
                 </div>
@@ -933,7 +982,7 @@
                         희석률 (%)
                         <span class="help-icon" data-tooltip="희석화로 인해 각 투자 라운드에서 신규 주식 발행으로 인해 기존 주주의 지분율이 감소하는 비율">?</span>
                     </label>
-                    <input type="number" id="dilutionRate" value="20" step="5" min="0" max="50">
+                    <input type="number" id="dilutionRate" value="20" step="5" min="0" max="50" aria-label="희석률 퍼센트 입력">
                     <div class="dilution-explanation">
                         <h4>💡 희석화란?</h4>
                         <p><strong>추가 투자로 인해 회사의 전체 주식 수가 늘어나면서, 기존 주주의 지분율이 감소하는 현상</strong></p>
@@ -960,22 +1009,80 @@
                 <div class="section">
                     <h2>🎯 투자 라운드별 스톡옵션 가치 시뮬레이션</h2>
                     <p style="margin-bottom: 20px; color: #6c757d;">
-                        각 투자 라운드를 거치면서 스톡옵션의 가치가 어떻게 변화하는지 확인해보세요
+                        각 투자 라운드를 거치면서 스톡옵션의 가치가 어떻게 변화하는지 확인해보세요. 
+                        희석화 효과와 주식 가치 상승을 모두 고려한 정확한 계산 결과를 제공합니다.
                     </p>
                     
-                    <div class="progression-table" id="progressionTable">
+                    <div class="progression-table" id="progressionTable" role="table" aria-label="투자 라운드별 스톡옵션 가치 비교표">
                         <!-- 동적으로 생성됩니다 -->
                     </div>
 
-                    <div class="stage-progression" id="stageProgression" style="margin-top: 30px;">
+                    <div class="stage-progression" id="stageProgression" style="margin-top: 30px;" role="region" aria-label="상세 투자 라운드 정보">
                         <!-- 상세 정보 카드들 -->
                     </div>
                 </div>
 
-                <div class="warning-section">
-                    <h3>⚠️ 반드시 알아두세요</h3>
+                <div class="warning-section" role="region" aria-labelledby="warning-title">
+                    <h3 id="warning-title">⚠️ 스톡옵션 투자 시 반드시 알아두세요</h3>
                     <ul class="warning-list">
                         <li>각 라운드마다 희석화가 발생하여 지분율이 줄어듭니다.</li>
+                        <li>현재 주당 가치와 실제 거래 가격은 다를 수 있습니다.</li>
+                        <li>세금 계산은 전문가와 상담하시기 바랍니다.</li>
+                        <li>베스팅이 완료되기 전에 퇴사하면 일부 옵션을 잃을 수 있습니다.</li>
+                        <li>시뮬레이션 결과는 예상치이며 실제 결과와 다를 수 있습니다.</li>
+                    </ul>
+                </div>
+
+                <section class="section" style="background: #e8f5e8; border: 2px solid #28a745;" aria-labelledby="cashout-methods">
+                    <h2 id="cashout-methods" style="color: #28a745; border-bottom-color: #28a745;">💡 스톡옵션 현금화 방법 가이드</h2>
+                    <p style="margin-bottom: 20px; color: #495057;">
+                        스톡옵션을 실제 현금으로 바꾸는 주요 방법들을 알아보세요. 각 방법의 특징과 주의사항을 확인하여 최적의 전략을 세우세요.
+                    </p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                        <article style="background: white; padding: 20px; border-radius: 15px; border-left: 4px solid #28a745;">
+                            <h3 style="color: #28a745; margin-bottom: 10px;">🏢 IPO/상장</h3>
+                            <p style="color: #495057; font-size: 0.9rem; line-height: 1.5;">
+                                가장 일반적인 방법으로, 회사가 공개적으로 거래소에 상장되면 주식을 자유롭게 매매할 수 있습니다.
+                            </p>
+                        </article>
+                        <article style="background: white; padding: 20px; border-radius: 15px; border-left: 4px solid #17a2b8;">
+                            <h3 style="color: #17a2b8; margin-bottom: 10px;">🤝 M&A (인수합병)</h3>
+                            <p style="color: #495057; font-size: 0.9rem; line-height: 1.5;">
+                                다른 회사에 인수되거나 합병될 때 주식이 현금이나 인수회사 주식으로 전환됩니다.
+                            </p>
+                        </article>
+                        <article style="background: white; padding: 20px; border-radius: 15px; border-left: 4px solid #ffc107;">
+                            <h3 style="color: #856404; margin-bottom: 10px;">📈 비상장 거래</h3>
+                            <p style="color: #495057; font-size: 0.9rem; line-height: 1.5;">
+                                ForgeGlobal, EquityZen 등의 플랫폼을 통해 비상장 주식을 거래할 수 있습니다. 일반적으로 할인된 가격에 거래됩니다.
+                            </p>
+                        </article>
+                        <article style="background: white; padding: 20px; border-radius: 15px; border-left: 4px solid #6f42c1;">
+                            <h3 style="color: #6f42c1; margin-bottom: 10px;">🏪 회사 자체 매입</h3>
+                            <p style="color: #495057; font-size: 0.9rem; line-height: 1.5;">
+                                일부 회사는 직원들의 스톡옵션을 회사가 직접 매입하는 프로그램을 운영합니다. 주로 성장이 빠른 유니콘 기업에서 제공됩니다.
+                            </p>
+                        </article>
+                        <article style="background: white; padding: 20px; border-radius: 15px; border-left: 4px solid #dc3545;">
+                            <h3 style="color: #dc3545; margin-bottom: 10px;">👥 개인간 거래</h3>
+                            <p style="color: #495057; font-size: 0.9rem; line-height: 1.5;">
+                                투자자나 다른 직원들과 개인적으로 거래할 수 있지만, 회사의 승인이 필요하며 법적 제약이 있을 수 있습니다.
+                            </p>
+                        </article>
+                        <article style="background: white; padding: 20px; border-radius: 15px; border-left: 4px solid #fd7e14;">
+                            <h3 style="color: #fd7e14; margin-bottom: 10px;">💰 배당금</h3>
+                            <p style="color: #495057; font-size: 0.9rem; line-height: 1.5;">
+                                회사가 수익을 배당금으로 지급하는 경우, 주식을 보유한 상태에서도 현금 수익을 얻을 수 있습니다.
+                            </p>
+                        </article>
+                    </div>
+                    <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 10px; margin-top: 20px;">
+                        <p style="color: #856404; font-size: 0.9rem; margin: 0; line-height: 1.5;">
+                            <strong>💡 전문가 팁:</strong> 상장 전에도 현금화가 가능한 경우가 있으니, 회사의 스톡옵션 정책과 시장 상황을 정기적으로 확인해보세요. 
+                            특히 시리즈 B 이후 단계의 스타트업은 비상장 거래나 회사 자체 매입 프로그램을 제공하는 경우가 많습니다.
+                        </p>
+                    </div>
+                </section>다.</li>
                         <li>현재 주당 가치와 실제 거래 가격은 다를 수 있습니다.</li>
                         <li>세금 계산은 전문가와 상담하시기 바랍니다.</li>
                         <li>베스팅이 완료되기 전에 퇴사하면 일부 옵션을 잃을 수 있습니다.</li>
@@ -1029,28 +1136,62 @@
                             특히 시리즈 B 이후 단계의 스타트업은 비상장 거래나 회사 자체 매입 프로그램을 제공하는 경우가 많습니다.
                         </p>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
 
         <!-- 하단 배너 -->
-        <div class="company-banner">
+        <footer class="company-banner" role="contentinfo">
             <div class="banner-content">
                 <div class="banner-text">
                     <span class="banner-subtitle">스타트업 이직의 새로운 경험</span>
                     <span class="banner-title">Candid</span>
                 </div>
                 <div class="banner-buttons">
-                    <a href="https://teamcandid.kr/" target="_blank" class="banner-button">
+                    <a href="https://teamcandid.kr/" target="_blank" class="banner-button" rel="noopener" aria-label="Candid 공식 홈페이지 방문">
                         공식 홈페이지 →
                     </a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScX7C_0Pnbb9WjbitE2C2K3hX4FDvcNpf5w5VDq1OVtHee6NA/viewform" target="_blank" class="banner-button">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScX7C_0Pnbb9WjbitE2C2K3hX4FDvcNpf5w5VDq1OVtHee6NA/viewform" target="_blank" class="banner-button" rel="noopener" aria-label="후보자 미팅 신청하기">
                         후보자미팅 신청 →
                     </a>
                 </div>
             </div>
-        </div>
+        </footer>
     </div>
+
+    <!-- FAQ 구조화된 데이터 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "스톡옵션이란 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "스톡옵션(주식매수선택권)은 회사가 임직원에게 미래의 특정 시점에 정해진 가격으로 회사 주식을 살 수 있는 권리를 부여하는 제도입니다. 회사의 성장과 함께 주식 가치가 상승하면 직원도 그 혜택을 받을 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "희석화란 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "희석화는 새로운 투자 라운드에서 신규 주식이 발행되면서 기존 주주의 지분율이 감소하는 현상입니다. 예를 들어, 전체 100만주 중 1,000주를 보유하고 있었다면 0.1%의 지분을 가지고 있었지만, 20% 희석화 후에는 전체 125만주 중 1,000주로 0.08%의 지분을 갖게 됩니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "스톡옵션을 언제 현금화할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer", 
+            "text": "스톡옵션은 주로 IPO/상장, M&A, 비상장 거래 플랫폼, 회사 자체 매입 프로그램 등을 통해 현금화할 수 있습니다. 각 방법마다 조건과 제약사항이 다르므로 회사의 정책을 확인하는 것이 중요합니다."
+          }
+        }
+      ]
+    }
+    </script>
 
     <script>
         function formatNumber(num) {
